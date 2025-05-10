@@ -1,0 +1,43 @@
+# Build artifacts (per project)
+**/bin/
+**/obj/
+**/TestResults/
+**/artifacts/
+**/coverage/
+
+# User-specific IDE settings
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code and JetBrains Rider
+.vscode/
+.idea/
+*.code-workspace
+
+# NuGet artifacts
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp
+
+# OS-specific cruft
+.DS_Store
+Thumbs.db
+
+# dotCover or coverage tools
+*.coverage
+*.coveragexml
+
+# Rider cache (optional)
+.idea/
+
+# Global JSON lock file (if using dotnet sdk version pinning)
+global.json.lock

@@ -1,8 +1,19 @@
-﻿class Program
+﻿
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+
+class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine(SingletonDatabase.Instance == SingletonDatabase.Instance);
-        Console.WriteLine(RecommendedSingletonDatabase.Instance == RecommendedSingletonDatabase.Instance);
+        using IHost host = Host.CreateDefaultBuilder(args)
+        .ConfigureServices(services =>
+        {
+            services.AddMyAppServices();
+        })
+        .Build();
+
+        var app = host.Services.GetRequiredService<IApp>();
+        app.Run();
     }
 }
